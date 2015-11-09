@@ -15,8 +15,32 @@
 </head>
 <body>
 
-	<h1>MARS</h1>
-	<p>{{ mars }}</p>
+	<h1>MARS HAS WORSE WEATHER THAN YOU</h1>
+	<h2>At least you won't die minutes after going outside.</h2>
+	<div class="local">
+		<h2>{{ location }}</h2>
+
+	</div>
+	<div class="mars">
+		<h2>Mars</h2>
+		<table>
+			<tr>
+				<td>High:</td>
+				<td>{{ mars[''] }}</td>
+			</tr>
+			<tr>
+				<td>Low:</td>
+				<td>{{ mars[''] }}</td>
+			</tr>
+			
+
+		</table>
+
+		<p>{{ mars['atmo_opacity'] }}</p>
+
+
+	</div>
+	
 
 
 

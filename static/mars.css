@@ -2,3 +2,24 @@
 	background: url(images/mars-surface.jpg)
 	center center fixed no-repeat;
 }
+h1 {
+	text-align: center;
+}
+h2 {
+	text-align: center;
+}
+.local {
+	width: 45%;
+	float: left;
+	margin: 0;
+	text-align: right;
+	padding-right: 10px;
+	
+}
+.mars {
+	width: 45%;
+	float: right;
+	margin: 0;
+	padding-left: 10px;
+
+}
