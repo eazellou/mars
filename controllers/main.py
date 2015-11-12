@@ -1,10 +1,13 @@
-
 from flask import *
 import requests
+import math
 
 app = Flask(__name__)
 
 main = Blueprint('main', __name__, template_folder='views')
+
+def kelvinToFahrenheit(kelvin):
+    return (kelvin - 273.15)* 1.8000 + 32.00
 
 
 @main.route('/')
@@ -30,11 +33,24 @@ def main_route():
     sep = ','
     location = location.split(sep, 1)[0]
 
-
+    #local weather
     weather_request = "http://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + lng + "&appid=d307b45f9ddbd64a8b6ebc51767f1d01"
 
     weatherRaw = requests.get(weather_request)
     weather = weatherRaw.json()
+
+    #convert pressure to atm
+    localatm = weather['main']['grnd_level'] / 1013.25
+    localatm = round(localatm, 2)
+    weather['main']['grnd_level'] = localatm
+    print '____________WEATHER______________'
+    print weather['weather'][0]['main']
+
+    #convert temperatures to Fahrenheit
+    weather['main']['temp'] = round(kelvinToFahrenheit(weather['main']['temp']), 2)
+
+
+
     print '__________LOCAL_________'
     print weather
 
@@ -42,6 +58,15 @@ def main_route():
 
     marsRaw = requests.get('http://marsweather.ingenology.com/v1/latest/')
     mars = marsRaw.json()
+    marsatm = mars['report']['pressure'] / 1013.25
+    marsatm = round(marsatm, 2)
+    mars['report']['pressure'] = marsatm
     print '_________MARS__________'
     print mars['report']
-    return render_template("mars.html", mars=mars['report'], location = location)
+
+
+    return render_template("mars.html", mars=mars['report'], local = weather, location = location)
+
+
+
+

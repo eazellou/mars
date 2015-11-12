@@ -19,24 +19,19 @@
 	<h2>At least you won't die minutes after going outside.</h2>
 	<div class="local">
 		<h2>{{ location }}</h2>
+		<p>{{ local['weather'][0]['main'] }}</p>
+		<p>{{ local['main']['temp'] }}&degF</p>
+		<p>{{ local['main']['grnd_level']}} atm</p>
 
 	</div>
 	<div class="mars">
 		<h2>Mars</h2>
-		<table>
-			<tr>
-				<td>High:</td>
-				<td>{{ mars[''] }}</td>
-			</tr>
-			<tr>
-				<td>Low:</td>
-				<td>{{ mars[''] }}</td>
-			</tr>
-			
-
-		</table>
-
+		
 		<p>{{ mars['atmo_opacity'] }}</p>
+		<p>{{ mars['min_temp_fahrenheit'] }}&degF &#8212 {{ mars['max_temp_fahrenheit'] }}&degF</p>
+		<p>{{ mars['pressure']}} atm</p>
+
+				
 
 
 	</div>
