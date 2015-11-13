@@ -24,15 +24,6 @@ def main_route():
     lat = str(latlong['location']['lat'])
     lng = str(latlong['location']['lng'])
 
-    location_request = "https://maps.googleapis.com/maps/api/geocode/json?latlng=" + lat + "," + lng + "&result_type=administrative_area_level_2&key=AIzaSyDLkw1t2_XtyMMVb4iGdKBmnC0xNiVX25M"
-    
-    locationRaw = requests.get(location_request)
-    locationJSON = locationRaw.json()
-    
-    location = locationJSON['results'][0]['formatted_address']
-    sep = ','
-    location = location.split(sep, 1)[0]
-
     #local weather
     weather_request = "http://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + lng + "&appid=d307b45f9ddbd64a8b6ebc51767f1d01"
 
@@ -43,8 +34,9 @@ def main_route():
     localatm = weather['main']['grnd_level'] / 1013.25
     localatm = round(localatm, 2)
     weather['main']['grnd_level'] = localatm
-    print '____________WEATHER______________'
-    print weather['weather'][0]['main']
+    print '____________PLACE______________'
+    print weather['name']
+    location = weather['name']
 
     #convert temperatures to Fahrenheit
     weather['main']['temp'] = round(kelvinToFahrenheit(weather['main']['temp']), 2)
@@ -58,6 +50,7 @@ def main_route():
 
     marsRaw = requests.get('http://marsweather.ingenology.com/v1/latest/')
     mars = marsRaw.json()
+    print mars['report']['pressure']
     marsatm = mars['report']['pressure'] / 1013.25
     marsatm = round(marsatm, 2)
     mars['report']['pressure'] = marsatm
