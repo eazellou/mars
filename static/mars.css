@@ -1,12 +1,42 @@
- body {
+@font-face {
+    font-family: 'dayposterblackregular';
+    src: url('./fonts/DayPosterBlack/DAYPBL__-webfont.eot');
+    src: url('./fonts/DayPosterBlack/DAYPBL__-webfont.eot?#iefix') format('embedded-opentype'),
+         url('./fonts/DayPosterBlack/DAYPBL__-webfont.woff') format('woff'),
+         url('./fonts/DayPosterBlack/DAYPBL__-webfont.ttf') format('truetype'),
+         url('./fonts/DayPosterBlack/DAYPBL__-webfont.svg#dayposterblackregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'bebasregular';
+    src: url('./fonts/Bebas/BEBAS___-webfont.eot');
+    src: url('./fonts/Bebas/BEBAS___-webfont.eot?#iefix') format('embedded-opentype'),
+         url('./fonts/Bebas/BEBAS___-webfont.woff') format('woff'),
+         url('./fonts/Bebas/BEBAS___-webfont.ttf') format('truetype'),
+         url('./fonts/Bebas/BEBAS___-webfont.svg#bebasregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+body {
 	background: url(images/mars-surface.jpg)
 	center center fixed no-repeat;
+	font-family: 'bebasregular';
 }
 h1 {
 	text-align: center;
+	font-family: 'dayposterblackregular';
+	font-size: 3em;
 }
 h2 {
 	text-align: center;
+	font-size: 1em;
 }
 .local {
 	width: 45%;
