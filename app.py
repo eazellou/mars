@@ -13,4 +13,4 @@ app.secret_key = '0#q!oj#*!ipb&^$p$$dsn-v06^q&$as76k*1(v5x4w&hagb+_4'
 # if you dont, gunicorn will ignore it anyway
 if __name__ == '__main__':
     # listen on external IPs
-    app.run(host='localhost', port=3000, debug=True)
+    app.run(host='localhost', port=80, debug=True)
