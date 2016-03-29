@@ -1,1 +1,1 @@
-web: python app.py
+web: gunicorn localhost:3000 app:app
