@@ -17,6 +17,7 @@ def main_route():
     #https://www.googleapis.com/geolocation/v1/geolocate?key=AIzaSyDLkw1t2_XtyMMVb4iGdKBmnC0xNiVX25M
     #administrative_area_level_2
     #d307b45f9ddbd64a8b6ebc51767f1d01 is appid for weather report
+    print 'AT THE BEGINNING'
 
     latlongRaw = requests.post("https://www.googleapis.com/geolocation/v1/geolocate?key=AIzaSyDLkw1t2_XtyMMVb4iGdKBmnC0xNiVX25M", data={})
     latlong = latlongRaw.json()
