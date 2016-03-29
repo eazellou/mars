@@ -1,1 +1,1 @@
-web: gunicorn localhost:3000 app:app
+web: gunicorn --debug app:app --log-file=-
