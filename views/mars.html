@@ -21,14 +21,14 @@
 		<h2>{{ location }}</h2>
 		<p>{{ local['weather'][0]['main'] }}</p>
 		<p>{{ local['main']['temp'] }}&degF</p>
-		<p>{{ local['main']['grnd_level']}} atm</p>
+		<p>{{ local['main']['pressure']}} atm</p>
 
 	</div>
 	<div class="mars">
 		<h2>Mars</h2>
 		
 		<p>{{ mars['atmo_opacity'] }}</p>
-		<p>{{ mars['min_temp_fahrenheit'] }}&degF &#8212 {{ mars['max_temp_fahrenheit'] }}&degF</p>
+		<p>Between {{ mars['min_temp_fahrenheit'] }}&degF and {{ mars['max_temp_fahrenheit'] }}&degF</p>
 		<p>{{ mars['pressure']}} atm</p>
 
 				

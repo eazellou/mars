@@ -31,9 +31,9 @@ def main_route():
     weather = weatherRaw.json()
 
     #convert pressure to atm
-    localatm = weather['main']['grnd_level'] / 1013.25
+    localatm = weather['main']['pressure'] / 1013.25
     localatm = round(localatm, 2)
-    weather['main']['grnd_level'] = localatm
+    weather['main']['pressure'] = localatm
     print '____________PLACE______________'
     print weather['name']
     location = weather['name']
